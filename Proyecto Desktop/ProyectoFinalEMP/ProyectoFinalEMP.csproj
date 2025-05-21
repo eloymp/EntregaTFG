@@ -1,0 +1,163 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UserSecretsId>38a5cdf3-1695-4e7c-a7f0-6ff3e2746c94</UserSecretsId>
+    <ApplicationIcon>gesem-logo-fondo-blanco-ico.ico</ApplicationIcon>
+    <PackageIcon>gesem-logo-fondo-blanco.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="AppIcon.ico" />
+    <None Remove="Resources\Images\añadir.png" />
+    <None Remove="Resources\Images\check.png" />
+    <None Remove="Resources\Images\cross.png" />
+    <None Remove="Resources\Images\eliminar.png" />
+    <None Remove="Resources\Images\enproceso.png" />
+    <None Remove="Resources\Images\gesem-logo-fondo-blanco.png" />
+    <None Remove="Resources\Images\gesem-logo-sin-fondo.png" />
+    <None Remove="Resources\Images\gestionarusuarios.png" />
+    <None Remove="Resources\Images\lapiz-editar.png" />
+    <None Remove="Resources\Images\pendientes.png" />
+    <None Remove="Resources\Images\solicitudes.png" />
+    <None Remove="Resources\Images\user-black.png" />
+    <None Remove="Resources\Images\user-white.png" />
+    <None Remove="Resources\Images\vertodas.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Resources\Lenguages\English.xaml" />
+    <Page Remove="Resources\Lenguages\Spanish.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="AppIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="gesem-logo-fondo-blanco-ico.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Documentos\Logos\gesem-logo-fondo-blanco.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\Montserrat.ttf" />
+    <Resource Include="Resources\Images\añadir.png" />
+    <Resource Include="Resources\Images\check.png" />
+    <Resource Include="Resources\Images\cross.png" />
+    <Resource Include="Resources\Images\eliminar.png" />
+    <Resource Include="Resources\Images\enproceso.png" />
+    <Resource Include="Resources\Images\gesem-logo-sin-fondo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+    <PackageReference Include="MongoDB.Driver" Version="3.3.0" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\gesem-logo-fondo-blanco.png" />
+    <Resource Include="Resources\Images\gestionarusuarios.png" />
+    <Resource Include="Resources\Images\lapiz-editar.png" />
+    <Resource Include="Resources\Images\menu.png" />
+    <Resource Include="Resources\Images\pendientes.png" />
+    <Resource Include="Resources\Images\solicitudes.png" />
+    <Resource Include="Resources\Images\finalizadas.png" />
+    <Resource Include="Resources\Images\user-black.png" />
+    <Resource Include="Resources\Images\user-white.png" />
+    <Resource Include="Resources\Images\vertodas.png" />
+    <Resource Include="Resources\Lenguages\English.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\Lenguages\Spanish.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Admin\AboutUsViewAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\FAQViewAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\ManageUsers.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\AdminMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\AddUserView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\ModifyUserView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DisplayAlerts\DisplayAlertLenguage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SuperAdmin\AboutUsViewSuperAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SuperAdmin\AddUserView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SuperAdmin\FAQViewSuperAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SuperAdmin\ManageUsersAdmins.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SuperAdmin\ModifyUserAdminView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SuperAdmin\SuperAdminMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\User\AboutUsViewUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\User\FAQViewUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Unregistered\FAQViewUnregistered.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Unregistered\AboutUsViewUnregistered.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\User\Solicitudes\AsesoriaAdministrativa\IntermediacionAsesorFiscal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\User\Solicitudes\ServiciosTecnicos\AsistenciaTecnica.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\User\UserManageRequests.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\User\UserMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Resources\Themes\LightTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DisplayAlerts\DisplayAlertLenguage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\User\UserManageRequests.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

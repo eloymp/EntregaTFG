@@ -1,0 +1,276 @@
+﻿<Window
+    x:Class="ProyectoFinalEMP.Views.Admin.ModifyUserView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ProyectoFinalEMP.Views.User"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{DynamicResource MenuItemProfile}"
+    Width="500"
+    Height="700"
+    MinWidth="300"
+    MinHeight="500"
+    AutomationProperties.Name="{DynamicResource ModifyUserView}"
+    Icon="pack://application:,,,/Resources/Images/user-black.png"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+
+    <Grid Background="{DynamicResource BarMenuColor}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+            <StackPanel Width="400" HorizontalAlignment="Center">
+
+                <!--  Foto redonda  -->
+                <Ellipse
+                    Width="200"
+                    Height="200"
+                    Margin="0,50,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Stroke="Black"
+                    StrokeThickness="1">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="imgFotoPerfil" Stretch="UniformToFill" />
+                    </Ellipse.Fill>
+                </Ellipse>
+
+                <TextBlock
+                    Margin="0,20,0,30"
+                    HorizontalAlignment="Center"
+                    MouseLeftButtonUp="ChangeProfileImage"
+                    Style="{DynamicResource HyperlinkStyle}"
+                    Text="{DynamicResource ChangeProfileImage}" />
+
+
+                <!--  Campos  -->
+                <StackPanel Margin="0,10,0,0">
+
+                    <!--  Email  -->
+                    <Grid Margin="90,10,0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                            Grid.Column="0"
+                            Style="{DynamicResource NormalTextStyle}"
+                            Text="{DynamicResource EmailProfile}" />
+
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <!--  Lápiz  -->
+                            <Image
+                                x:Name="imgEditar"
+                                Width="30"
+                                Height="30"
+                                Margin="5,0"
+                                Cursor="Hand"
+                                MouseLeftButtonUp="EditarCampos_Click"
+                                Source="pack://application:,,,/Resources/Images/lapiz-editar.png" />
+
+                            <!--  Check  -->
+                            <Image
+                                x:Name="imgGuardar"
+                                Width="30"
+                                Height="30"
+                                Margin="5,0"
+                                Cursor="Hand"
+                                MouseLeftButtonUp="GuardarCambios_Click"
+                                Source="pack://application:,,,/Resources/Images/check.png"
+                                Visibility="Collapsed" />
+
+                            <!--  Uncheck  -->
+                            <Image
+                                x:Name="imgCancelar"
+                                Width="30"
+                                Height="30"
+                                Margin="5,0"
+                                Cursor="Hand"
+                                MouseLeftButtonUp="CancelarCambios_Click"
+                                Source="pack://application:,,,/Resources/Images/cross.png"
+                                Visibility="Collapsed" />
+                        </StackPanel>
+                    </Grid>
+
+                    <TextBox
+                        x:Name="EntryEmail"
+                        IsReadOnly="True"
+                        Style="{DynamicResource EntryStyle}" />
+
+
+                    <!--  Nombre  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource NameProfile}" />
+                    <TextBox
+                        x:Name="EntryName"
+                        IsReadOnly="True"
+                        PreviewTextInput="SoloLetras_PreviewTextInput"
+                        Style="{DynamicResource EntryStyle}" />
+
+                    <!--  Apellidos  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource LastNameProfile}" />
+                    <TextBox
+                        x:Name="EntryLastName"
+                        IsReadOnly="True"
+                        PreviewTextInput="SoloLetras_PreviewTextInput"
+                        Style="{DynamicResource EntryStyle}" />
+
+                    <!--  NIF  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource NIFProfile}" />
+                    <TextBox
+                        x:Name="EntryNIF"
+                        IsReadOnly="True"
+                        Style="{DynamicResource EntryStyle}" />
+
+                    <!--  Teléfono  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource PhoneProfile}" />
+                    <TextBox
+                        x:Name="EntryPhone"
+                        IsReadOnly="True"
+                        PreviewTextInput="EntryPhone_PreviewTextInput"
+                        Style="{DynamicResource EntryStyle}" />
+
+                    <!--  Dirección  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource AddressProfile}" />
+                    <TextBox
+                        x:Name="EntryAddress"
+                        IsReadOnly="True"
+                        Style="{DynamicResource EntryStyle}" />
+
+                    <!--  Rol  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource ClientRolProfile}" />
+                    <TextBox
+                        x:Name="EntryRol"
+                        IsReadOnly="True"
+                        Style="{DynamicResource EntryStyle}" />
+
+                    <!--  Tipo de cliente  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource ClientTypeProfile}" />
+                    <ComboBox
+                        x:Name="LstTipoCliente"
+                        Width="220"
+                        Cursor="Hand"
+                        IsEnabled="False"
+                        Style="{DynamicResource ComboBoxStyle}">
+                        <ComboBoxItem Content="{DynamicResource ClientTypeAuto}" Tag="autonomo" />
+                        <ComboBoxItem Content="{DynamicResource ClientTypeCompany}" Tag="pyme" />
+                    </ComboBox>
+
+                    <!--  Estado de la cuenta  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource ClientStateProfile}" />
+                    <ComboBox
+                        x:Name="LstEstadoCuenta"
+                        Width="220"
+                        Cursor="Hand"
+                        IsEnabled="False"
+                        Style="{DynamicResource ComboBoxStyle}">
+                        <ComboBoxItem Content="{DynamicResource ClientStateActive}" Tag="activa" />
+                        <ComboBoxItem Content="{DynamicResource ClientStateInactive}" Tag="suspendida" />
+                    </ComboBox>
+
+                    <!--  Nombre de la empresa  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource CompanyName}" />
+                    <TextBox
+                        x:Name="EntryCompanyName"
+                        IsReadOnly="True"
+                        Style="{DynamicResource EntryStyle}" />
+
+                    <!--  Descripcion de la empresa  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource CompanyDescription}" />
+                    <TextBox
+                        x:Name="EntryCompanyDescription"
+                        Width="220"
+                        Height="100"
+                        AcceptsReturn="True"
+                        IsReadOnly="True"
+                        Style="{DynamicResource EntryStyle}"
+                        TextWrapping="Wrap" />
+
+                    <!--  Cambiar contraseña  -->
+                    <TextBlock
+                        Margin="0,40,0,5"
+                        HorizontalAlignment="Center"
+                        MouseLeftButtonUp="ChangeProfilePassword"
+                        Style="{DynamicResource HyperlinkStyle}"
+                        Text="{DynamicResource ChangePassowrdProfile}" />
+
+                    <!--  Cambiar contraseña  -->
+                    <TextBlock
+                        Margin="0,40,0,60"
+                        HorizontalAlignment="Center"
+                        Foreground="Red"
+                        MouseLeftButtonUp="DeleteAccount"
+                        Style="{DynamicResource HyperlinkStyle}"
+                        Text="{DynamicResource DeleteAccount}" />
+
+                    <StackPanel x:Name="PanelCambiarContraseña" Visibility="Collapsed">
+
+
+                        <!--  Nueva contraseña  -->
+                        <TextBlock
+                            Margin="90,10,0,5"
+                            Style="{DynamicResource NormalTextStyle}"
+                            Text="{DynamicResource NewPassword}" />
+                        <PasswordBox
+                            x:Name="NewPassword"
+                            Width="220"
+                            Height="25"
+                            VerticalContentAlignment="Center" />
+
+                        <!--  Repetir nueva contraseña  -->
+                        <TextBlock
+                            Margin="90,10,0,5"
+                            Style="{DynamicResource NormalTextStyle}"
+                            Text="{DynamicResource RepeatNewPassword}" />
+                        <PasswordBox
+                            x:Name="RepeatNewPassword"
+                            Width="220"
+                            Height="25"
+                            VerticalContentAlignment="Center" />
+
+                        <!--  Botón guardar contraseña  -->
+                        <Button
+                            Width="200"
+                            Height="40"
+                            Margin="0,30,0,60"
+                            Click="BtnGuardarContraseña_Click"
+                            Content="{DynamicResource UpdatePassword}"
+                            Style="{DynamicResource ButtonStyle}" />
+
+                    </StackPanel>
+
+
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,692 @@
+﻿<Page
+    x:Class="ProyectoFinalEMP.Views.User.Solicitudes.AsesoriaAdministrativa.IntermediacionAsesorFiscal "
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ProyectoFinalEMP.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Gesem: herramienta de gestion empresarial"
+    Width="Auto"
+    Height="Auto"
+    AutomationProperties.Name="{DynamicResource IntermediacionAsesor}"
+    MouseDown="MainGrid_MouseDown"
+    mc:Ignorable="d">
+
+    <Grid Background="{DynamicResource BackgroundColor}">
+
+        <!--  Barra lateral  -->
+        <DockPanel
+            x:Name="PanelLateral"
+            Width="65"
+            Margin="0,65,0,0"
+            HorizontalAlignment="Left"
+            Background="{DynamicResource LeftBarMenuColor}"
+            MouseLeftButtonDown="PanelLateral_MouseLeftButtonDown">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!--  Iconos arriba  -->
+                <StackPanel
+                    x:Name="SidebarItemsPanel"
+                    Grid.Row="0"
+                    Margin="10"
+                    VerticalAlignment="Top">
+
+                    <!--  Solicitudes  -->
+                    <StackPanel Margin="0,200,0,0" Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="pack://application:,,,/Resources/Images/solicitudes.png" />
+                        <TextBlock
+                            x:Name="TextoSolicitudes"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{DynamicResource LeftBarElement}"
+                            Text="{DynamicResource LeftMenuRequests}"
+                            Visibility="Collapsed" />
+                    </StackPanel>
+
+                    <!--  Ver todas  -->
+                    <StackPanel
+                        Margin="10,15,0,0"
+                        Cursor="Hand"
+                        MouseDown="VerTodasSolicitudes"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="pack://application:,,,/Resources/Images/vertodas.png" />
+                        <TextBlock
+                            x:Name="TextoVerTodas"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{DynamicResource LeftBarElement}"
+                            Text="{DynamicResource LeftMenuWatchAll}"
+                            Visibility="Collapsed" />
+                    </StackPanel>
+
+                    <!--  Pendientes  -->
+                    <StackPanel
+                        Margin="10,20,0,0"
+                        Cursor="Hand"
+                        MouseDown="VerPendientesSolicitudes"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="pack://application:,,,/Resources/Images/pendientes.png" />
+                        <TextBlock
+                            x:Name="TextoPendientes"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{DynamicResource LeftBarElement}"
+                            Text="{DynamicResource LeftMenuPendings}"
+                            Visibility="Collapsed" />
+                    </StackPanel>
+
+                    <!--  En proceso  -->
+                    <StackPanel
+                        Margin="10,20,0,0"
+                        Cursor="Hand"
+                        MouseDown="VerEnProcesoSolicitudes"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="pack://application:,,,/Resources/Images/enproceso.png" />
+                        <TextBlock
+                            x:Name="TextoEnProceso"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{DynamicResource LeftBarElement}"
+                            Text="{DynamicResource LeftMenuInProcess}"
+                            Visibility="Collapsed" />
+                    </StackPanel>
+
+                    <!--  Finalizadas  -->
+                    <StackPanel
+                        Margin="10,20,0,0"
+                        Cursor="Hand"
+                        MouseDown="VerFinalizadasSolicitudes"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="pack://application:,,,/Resources/Images/finalizadas.png" />
+                        <TextBlock
+                            x:Name="TextoFinalizadas"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{DynamicResource LeftBarElement}"
+                            Text="{DynamicResource LeftMenuFinished}"
+                            Visibility="Collapsed" />
+                    </StackPanel>
+                </StackPanel>
+
+                <!--  Texto de última conexión abajo  -->
+                <TextBlock
+                    x:Name="TextoUltimaConexion"
+                    Grid.Row="1"
+                    Margin="10,10"
+                    HorizontalAlignment="Center"
+                    FontSize="14"
+                    Style="{DynamicResource LeftBarElement}"
+                    TextWrapping="Wrap"
+                    Visibility="Collapsed" />
+            </Grid>
+        </DockPanel>
+
+        <!--  Barra superior  -->
+        <DockPanel
+            Height="65"
+            VerticalAlignment="Top"
+            Background="{DynamicResource TopBarMenuColor}">
+
+            <!--  Imagen con el logo  -->
+            <Image
+                Width="150"
+                Height="150"
+                Margin="20,10,0,0"
+                VerticalAlignment="Center"
+                Cursor="Hand"
+                MouseDown="ImgLogo_Click"
+                Source="pack://application:,,,/Resources/Images/gesem-logo-sin-fondo.png" />
+
+            <!--  Menu  -->
+            <Menu
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Background="{DynamicResource TopBarMenuColor}">
+
+                <!--  Menu 3 barras  -->
+                <MenuItem
+                    Margin="0,0,10,0"
+                    Cursor="Hand"
+                    Style="{DynamicResource NormalTextStyle}">
+                    <MenuItem.Header>
+                        <!--  Imagen menú  -->
+                        <Image
+                            Width="45"
+                            Height="45"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="pack://application:,,,/Resources/Images/menu.png" />
+                    </MenuItem.Header>
+
+                    <!--  Opciones menú  -->
+                    <MenuItem
+                        Click="Home_Click"
+                        Header="{DynamicResource MenuItemHome}"
+                        Style="{StaticResource MenuItemStyle}" />
+                    <MenuItem
+                        Click="Help_Click"
+                        Header="{DynamicResource MenuItemFAQ}"
+                        Style="{DynamicResource MenuItemStyle}" />
+                    <MenuItem
+                        Click="AboutUs_Click"
+                        Header="{DynamicResource MenuItemAboutUs}"
+                        Style="{DynamicResource MenuItemStyle}" />
+                </MenuItem>
+
+
+                <!--  Menu usuario  -->
+                <MenuItem Margin="0,0,10,0" Cursor="Hand">
+                    <MenuItem.Header>
+                        <!--  Imagen menú  -->
+                        <Ellipse
+                            Width="45"
+                            Height="45"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Stroke="Black"
+                            StrokeThickness="0.5">
+                            <Ellipse.Fill>
+                                <ImageBrush
+                                    x:Name="MenuImage"
+                                    ImageSource="pack://application:,,,/Resources/Images/user-black.png"
+                                    Stretch="UniformToFill" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </MenuItem.Header>
+
+                    <!--  Submenú con opciones de usuario  -->
+                    <MenuItem Click="EditProfile_Click" Style="{DynamicResource MenuItemStyle}">
+                        <MenuItem.Header>
+                            <StackPanel Width="200">
+                                <TextBlock Margin="0,0,0,10" Text="{DynamicResource MenuItemProfile}" />
+                                <TextBlock x:Name="MenuProfileEmail" Style="{DynamicResource TextBlockStyle}" />
+                                <TextBlock x:Name="MenuProfileName" Style="{DynamicResource TextBlockStyle}" />
+                                <TextBlock x:Name="MenuProfileNumber" Style="{DynamicResource TextBlockStyle}" />
+                                <TextBlock x:Name="MenuProfileAddress" Style="{DynamicResource TextBlockStyle}" />
+
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+
+                    <!--  Otras opciones de menú  -->
+                    <MenuItem
+                        Click="Lenguage_Click"
+                        Header="{DynamicResource MenuItemLenguage}"
+                        Style="{DynamicResource MenuItemStyle}" />
+                    <MenuItem
+                        Click="Theme_Click"
+                        Header="{DynamicResource MenuItemTheme}"
+                        Style="{DynamicResource MenuItemStyle}" />
+                    <MenuItem
+                        Click="LogOut_Click"
+                        Header="{DynamicResource MenuItemLogOut}"
+                        Style="{DynamicResource MenuItemStyle}" />
+                </MenuItem>
+            </Menu>
+
+        </DockPanel>
+
+        <!--  Contenedor general  -->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+
+            <StackPanel
+                Margin="0,120,0,40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top">
+
+                <!--  Título  -->
+                <Label
+                    Margin="0,30,0,0"
+                    HorizontalAlignment="Center"
+                    Content="{DynamicResource TituloIntermediario}"
+                    Style="{DynamicResource TitleTextStyle}" />
+            </StackPanel>
+
+
+            <!--  Contenedor asistencia  -->
+            <Border
+                Width="800"
+                Height="700"
+                VerticalAlignment="Stretch"
+                Background="{DynamicResource TopBarMenuColor}"
+                CornerRadius="39">
+                <!--  Sombra  -->
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="20"
+                        Direction="320"
+                        Opacity="0.5"
+                        ShadowDepth="10"
+                        Color="{DynamicResource ShadowColor}" />
+                </Border.Effect>
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+                    <StackPanel Margin="75">
+
+                        <!--  Descripción  -->
+                        <Label
+                            Margin="0,20,0,15"
+                            HorizontalAlignment="Center"
+                            Content="{DynamicResource AssistanceDescription}"
+                            Style="{DynamicResource MediumTextStyle}" />
+                        <TextBox
+                            x:Name="TxtDescripcionCliente"
+                            Width="400"
+                            Height="200"
+                            AcceptsReturn="True"
+                            Style="{DynamicResource SmallTextStyle}"
+                            TextWrapping="Wrap" />
+
+                        <!--  NombreAsesorFinanciero  -->
+                        <Label
+                            Margin="0,20,0,15"
+                            HorizontalAlignment="Center"
+                            Content="{DynamicResource NombreAsesorFinanciero}"
+                            Style="{DynamicResource MediumTextStyle}" />
+                        <TextBox
+                            x:Name="TxtNombreAsesor"
+                            Width="300"
+                            Height="30"
+                            Margin="0,0,0,10"
+                            AcceptsReturn="True"
+                            PreviewTextInput="SoloLetras_PreviewTextInput"
+                            Style="{DynamicResource SmallTextStyle}" />
+
+                        <!--  CorreoAsesorFinanciero  -->
+                        <Label
+                            Margin="0,20,0,15"
+                            HorizontalAlignment="Center"
+                            Content="{DynamicResource CorreoAsesorFinanciero}"
+                            Style="{DynamicResource MediumTextStyle}" />
+                        <TextBox
+                            x:Name="TxtCorreoAsesor"
+                            Width="300"
+                            Height="30"
+                            Margin="0,0,0,10"
+                            AcceptsReturn="True"
+                            Style="{DynamicResource SmallTextStyle}" />
+
+                        <!--  TelefonoAsesorFinanciero  -->
+                        <Label
+                            Margin="0,20,0,15"
+                            HorizontalAlignment="Center"
+                            Content="{DynamicResource TelefonoAsesorFinanciero}"
+                            Style="{DynamicResource MediumTextStyle}" />
+                        <TextBox
+                            x:Name="TxtTelefonoAsesor"
+                            Width="300"
+                            Height="30"
+                            Margin="0,0,0,10"
+                            AcceptsReturn="True"
+                            PreviewTextInput="SoloNumeros_PreviewTextInput"
+                            Style="{DynamicResource SmallTextStyle}" />
+
+
+                        <!--  Elegir tipo de periodo  -->
+                        <Label
+                            Margin="0,20,0,15"
+                            HorizontalAlignment="Center"
+                            Content="{DynamicResource ElegirTipoDePeriodo}"
+                            Style="{DynamicResource MediumTextStyle}" />
+                        <ComboBox
+                            x:Name="cmbPeriodoFiscal"
+                            Cursor="Hand"
+                            SelectionChanged="cmbPeriodoFiscal_SelectionChanged"
+                            Style="{DynamicResource ComboBoxStyle}">
+
+                            <ComboBoxItem
+                                Content="{DynamicResource Trimestral}"
+                                Cursor="Hand"
+                                Tag="trimestral" />
+                            <ComboBoxItem
+                                Content="{DynamicResource Anual}"
+                                Cursor="Hand"
+                                IsSelected="True"
+                                Tag="anual" />
+                        </ComboBox>
+
+                        <ComboBox
+                            x:Name="cmbTrimestre"
+                            Margin="0,30,0,0"
+                            Cursor="Hand"
+                            Style="{DynamicResource ComboBoxStyle}"
+                            Visibility="Collapsed">
+                            <ComboBoxItem
+                                Content="{DynamicResource Trimestre1}"
+                                Cursor="Hand"
+                                Tag="1" />
+                            <ComboBoxItem
+                                Content="{DynamicResource Trimestre2}"
+                                Cursor="Hand"
+                                Tag="2" />
+                            <ComboBoxItem
+                                Content="{DynamicResource Trimestre3}"
+                                Cursor="Hand"
+                                Tag="3" />
+                            <ComboBoxItem
+                                Content="{DynamicResource Trimestre4}"
+                                Cursor="Hand"
+                                Tag="4" />
+                        </ComboBox>
+
+                        <!--  Archivos adjuntos  -->
+                        <StackPanel
+                            x:Name="AdjuntarArchivos"
+                            Margin="0,30,0,10"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                            <!--  Título  -->
+                            <TextBlock
+                                Margin="0,0,10,0"
+                                VerticalAlignment="Center"
+                                Style="{DynamicResource MediumTextStyle}"
+                                Text="{DynamicResource ArchivosAdjuntos}" />
+
+                            <!--  Icono de añadir  -->
+                            <Image
+                                x:Name="BtnAñadirArchivo"
+                                Width="30"
+                                Height="30"
+                                Margin="10,0,0,0"
+                                VerticalAlignment="Center"
+                                Cursor="Hand"
+                                MouseDown="BtnAñadirArchivo_Click"
+                                Source="pack://application:,,,/Resources/Images/añadir.png" />
+                        </StackPanel>
+
+
+                        <!--  Panel para añadir archivos  -->
+                        <ItemsControl x:Name="PanelArchivos">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Margin="0,10" CornerRadius="10">
+                                        <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+
+                                            <!--  Se enlaza con el nombre del archivo por el binding  -->
+                                            <TextBlock
+                                                Margin="0,0,0,10"
+                                                HorizontalAlignment="Center"
+                                                Cursor="Hand"
+                                                MouseDown="TxtNombreArchivo_MouseDown"
+                                                Style="{DynamicResource HyperlinkStyle}"
+                                                Tag="{Binding}"
+                                                Text="{Binding Nombre}" />
+
+                                            <StackPanel x:Name="EliminarArchivo" Orientation="Horizontal">
+                                                <!--  Se enlaza con el comentario  -->
+                                                <TextBox
+                                                    Width="300"
+                                                    Height="35"
+                                                    Margin="35,0,0,0"
+                                                    HorizontalAlignment="Center"
+                                                    AcceptsReturn="True"
+                                                    Style="{DynamicResource SmallTextStyle}"
+                                                    Text="{Binding Comentario}"
+                                                    TextWrapping="Wrap" />
+                                                <!--  Imagen de eliminar  -->
+                                                <Image
+                                                    x:Name="ImgEliminarArchivo"
+                                                    Width="25"
+                                                    Height="25"
+                                                    Margin="10,0,0,0"
+                                                    Cursor="Hand"
+                                                    MouseDown="BtnEliminarArchivo_Click"
+                                                    Source="pack://application:,,,/Resources/Images/eliminar.png"
+                                                    Tag="{Binding}" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                        <!--  Botón para enviar  -->
+                        <Button
+                            x:Name="BtnEnviar"
+                            Width="200"
+                            Height="40"
+                            Margin="0,60,0,0"
+                            Click="BtnEnviar_Click"
+                            Content="{DynamicResource SendButton}"
+                            Style="{DynamicResource ButtonStyle}" />
+
+                        <!--  Archivos enviados por el cliente  -->
+                        <StackPanel
+                            x:Name="PanelArchivosCliente"
+                            Margin="0,40,0,0"
+                            Visibility="Collapsed">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                Style="{DynamicResource MediumTextStyle}"
+                                Text="{DynamicResource ArchivosEnviados}" />
+
+                            <ItemsControl x:Name="PanelArchivosClienteView" Margin="0,20,0,0">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+                                            <TextBlock
+                                                Margin="0,10,0,0"
+                                                HorizontalAlignment="Center"
+                                                Cursor="Hand"
+                                                MouseDown="TxtNombreArchivoRespuesta_MouseDown"
+                                                Style="{DynamicResource HyperlinkStyle}"
+                                                Tag="{Binding}"
+                                                Text="{Binding Nombre}" />
+                                            <TextBox
+                                                Width="300"
+                                                Height="35"
+                                                Margin="0,10,0,0"
+                                                HorizontalAlignment="Center"
+                                                IsReadOnly="True"
+                                                Style="{DynamicResource EntryStyle}"
+                                                Text="{Binding Comentario}"
+                                                TextWrapping="Wrap" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+
+
+                        <!--  Archivos enviados por el administrador recibidos por el cliente  -->
+                        <StackPanel
+                            x:Name="PanelRespuestaAdmin"
+                            Margin="0,40,0,0"
+                            Visibility="Collapsed">
+
+
+                            <!--  Comentarios  -->
+                            <Label
+                                Margin="0,20,0,15"
+                                HorizontalAlignment="Center"
+                                Content="{DynamicResource ComentariosAdmin}"
+                                Style="{DynamicResource MediumTextStyle}" />
+                            <TextBox
+                                x:Name="TxtComentariosAdminView"
+                                Width="400"
+                                Height="200"
+                                AcceptsReturn="True"
+                                Style="{DynamicResource SmallTextStyle}"
+                                TextWrapping="Wrap" />
+
+                            <TextBlock
+                                Margin="0,40,0,0"
+                                HorizontalAlignment="Center"
+                                Style="{DynamicResource MediumTextStyle}"
+                                Text="{DynamicResource ArchivosEnviados}" />
+
+                            <ItemsControl x:Name="PanelRespuestaAdminView" Margin="0,20,0,0">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+
+                                            <TextBlock
+                                                HorizontalAlignment="Center"
+                                                Cursor="Hand"
+                                                MouseDown="TxtNombreArchivoRespuesta_MouseDown"
+                                                Style="{DynamicResource HyperlinkStyle}"
+                                                Tag="{Binding}"
+                                                Text="{Binding Nombre}" />
+                                            <TextBox
+                                                Width="300"
+                                                Height="35"
+                                                Margin="0,10,0,0"
+                                                HorizontalAlignment="Center"
+                                                IsReadOnly="True"
+                                                Style="{DynamicResource EntryStyle}"
+                                                Text="{Binding Comentario}"
+                                                TextWrapping="Wrap" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <Label
+                                x:Name="LblFechaRespuesta"
+                                Margin="0,20,0,15"
+                                HorizontalAlignment="Center"
+                                Style="{DynamicResource SmallTextStyle}"
+                                Visibility="Collapsed" />
+                        </StackPanel>
+
+
+                        <!--  Comentarios  -->
+                        <StackPanel x:Name="PanelAdminCompleto" Visibility="Collapsed">
+                            <Label
+                                Margin="0,20,0,15"
+                                HorizontalAlignment="Center"
+                                Content="{DynamicResource ComentariosAdmin}"
+                                Style="{DynamicResource MediumTextStyle}" />
+                            <TextBox
+                                x:Name="TxtComentariosAdmin"
+                                Width="400"
+                                Height="200"
+                                AcceptsReturn="True"
+                                Style="{DynamicResource SmallTextStyle}"
+                                TextWrapping="Wrap" />
+
+                            <!--  Archivos adjuntos  -->
+                            <StackPanel
+                                x:Name="AdjuntarArchivosAdmin"
+                                Margin="0,30,0,10"
+                                HorizontalAlignment="Center"
+                                Orientation="Horizontal">
+                                <!--  Título  -->
+                                <TextBlock
+                                    Margin="0,0,10,0"
+                                    VerticalAlignment="Center"
+                                    Style="{DynamicResource MediumTextStyle}"
+                                    Text="Archivos adjuntos" />
+
+                                <!--  Icono de añadir  -->
+                                <Image
+                                    x:Name="BtnAñadirArchivoAdmin"
+                                    Width="30"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Cursor="Hand"
+                                    MouseDown="BtnAñadirArchivoAdmin_Click"
+                                    Source="pack://application:,,,/Resources/Images/añadir.png" />
+                            </StackPanel>
+
+
+                            <!--  Panel para añadir archivos admin  -->
+                            <ItemsControl x:Name="PanelArchivosAdmin">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Margin="0,10" CornerRadius="10">
+                                            <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+
+                                                <!--  Se enlaza con el nombre del archivo por el binding  -->
+                                                <TextBlock
+                                                    Margin="0,0,0,10"
+                                                    HorizontalAlignment="Center"
+                                                    Cursor="Hand"
+                                                    MouseDown="TxtNombreArchivo_MouseDown"
+                                                    Style="{DynamicResource HyperlinkStyle}"
+                                                    Tag="{Binding}"
+                                                    Text="{Binding Nombre}" />
+
+                                                <StackPanel x:Name="EliminarArchivo" Orientation="Horizontal">
+                                                    <!--  Se enlaza con el comentario  -->
+                                                    <TextBox
+                                                        Width="300"
+                                                        Height="35"
+                                                        Margin="35,0,0,0"
+                                                        HorizontalAlignment="Center"
+                                                        AcceptsReturn="True"
+                                                        Style="{DynamicResource SmallTextStyle}"
+                                                        Text="{Binding Comentario}"
+                                                        TextWrapping="Wrap" />
+                                                    <!--  Imagen de eliminar  -->
+                                                    <Image
+                                                        x:Name="ImgEliminarArchivo"
+                                                        Width="25"
+                                                        Height="25"
+                                                        Margin="10,0,0,0"
+                                                        Cursor="Hand"
+                                                        MouseDown="BtnEliminarArchivoAdmin_Click"
+                                                        Source="pack://application:,,,/Resources/Images/eliminar.png"
+                                                        Tag="{Binding}" />
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+
+
+
+                            <!--  Botón para enviar  -->
+                            <Button
+                                x:Name="BtnEnviarRespuesta"
+                                Width="200"
+                                Height="40"
+                                Margin="0,40,0,0"
+                                Click="BtnEnviarRespuesta_Click"
+                                Content="{DynamicResource SendButton}"
+                                Style="{DynamicResource ButtonStyle}"
+                                Visibility="Collapsed" />
+
+                        </StackPanel>
+
+                        <!--  Boton para eliminar  -->
+                        <Button
+                            x:Name="BtnEliminar"
+                            Width="200"
+                            Height="40"
+                            Margin="0,40,0,0"
+                            Click="BtnEliminar_Click"
+                            Content="{DynamicResource Delete}"
+                            Style="{DynamicResource ButtonStyleRed}"
+                            Visibility="Collapsed" />
+
+
+                    </StackPanel>
+
+                </ScrollViewer>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,367 @@
+﻿<Page
+    x:Class="ProyectoFinalEMP.Views.SuperAdmin.SuperAdminMainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ProyectoFinalEMP.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="Auto"
+    Height="Auto"
+    AutomationProperties.Name="{DynamicResource SuperAdminMainView}"
+    mc:Ignorable="d">
+    <Grid Background="{DynamicResource BackgroundColor}">
+
+        <!--  Barra lateral  -->
+        <DockPanel
+            x:Name="PanelLateral"
+            Width="65"
+            Margin="0,65,0,0"
+            HorizontalAlignment="Left"
+            Background="{DynamicResource LeftBarMenuColor}"
+            MouseLeftButtonDown="PanelLateral_MouseLeftButtonDown">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!--  Iconos arriba  -->
+                <StackPanel
+                    x:Name="SidebarItemsPanel"
+                    Grid.Row="0"
+                    Margin="10"
+                    VerticalAlignment="Top">
+
+                    <!--  Solicitudes  -->
+                    <StackPanel Margin="0,200,0,0" Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="pack://application:,,,/Resources/Images/solicitudes.png" />
+                        <TextBlock
+                            x:Name="TextoSolicitudes"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{DynamicResource LeftBarElement}"
+                            Text="{DynamicResource LeftMenuRequests}"
+                            Visibility="Collapsed" />
+                    </StackPanel>
+
+                    <!--  Ver todas  -->
+                    <StackPanel
+                        Margin="10,15,0,0"
+                        Cursor="Hand"
+                        MouseDown="VerTodasSolicitudes"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="pack://application:,,,/Resources/Images/vertodas.png" />
+                        <TextBlock
+                            x:Name="TextoVerTodas"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{DynamicResource LeftBarElement}"
+                            Text="{DynamicResource LeftMenuWatchAll}"
+                            Visibility="Collapsed" />
+                    </StackPanel>
+
+                    <!--  Pendientes  -->
+                    <StackPanel
+                        Margin="10,20,0,0"
+                        Cursor="Hand"
+                        MouseDown="VerPendientesSolicitudes"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="pack://application:,,,/Resources/Images/pendientes.png" />
+                        <TextBlock
+                            x:Name="TextoPendientes"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{DynamicResource LeftBarElement}"
+                            Text="{DynamicResource LeftMenuPendings}"
+                            Visibility="Collapsed" />
+                    </StackPanel>
+
+                    <!--  En proceso  -->
+                    <StackPanel
+                        Margin="10,20,0,0"
+                        Cursor="Hand"
+                        MouseDown="VerEnProcesoSolicitudes"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="pack://application:,,,/Resources/Images/enproceso.png" />
+                        <TextBlock
+                            x:Name="TextoEnProceso"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{DynamicResource LeftBarElement}"
+                            Text="{DynamicResource LeftMenuInProcess}"
+                            Visibility="Collapsed" />
+                    </StackPanel>
+
+                    <!--  Finalizadas  -->
+                    <StackPanel
+                        Margin="10,20,0,0"
+                        Cursor="Hand"
+                        MouseDown="VerFinalizadasSolicitudes"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="pack://application:,,,/Resources/Images/finalizadas.png" />
+                        <TextBlock
+                            x:Name="TextoFinalizadas"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{DynamicResource LeftBarElement}"
+                            Text="{DynamicResource LeftMenuFinished}"
+                            Visibility="Collapsed" />
+                    </StackPanel>
+
+                    <!--  Gestionar usuarios  -->
+                    <StackPanel
+                        Margin="0,50,0,0"
+                        Cursor="Hand"
+                        MouseDown="GestionarUsuarios_Click"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="pack://application:,,,/Resources/Images/gestionarusuarios.png" />
+                        <TextBlock
+                            x:Name="TextoGestionarUsuarios"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{DynamicResource LeftBarElement}"
+                            Text="{DynamicResource LeftMenuManageUsers}"
+                            Visibility="Collapsed" />
+                    </StackPanel>
+                </StackPanel>
+
+                <!--  Texto de última conexión abajo  -->
+                <TextBlock
+                    x:Name="TextoUltimaConexion"
+                    Grid.Row="1"
+                    Margin="10,10"
+                    HorizontalAlignment="Center"
+                    FontSize="14"
+                    Style="{DynamicResource LeftBarElement}"
+                    TextWrapping="Wrap"
+                    Visibility="Collapsed" />
+            </Grid>
+        </DockPanel>
+
+
+        <!--  Barra superior  -->
+        <DockPanel
+            Height="65"
+            VerticalAlignment="Top"
+            Background="{DynamicResource TopBarMenuColor}">
+
+            <!--  Imagen con el logo  -->
+            <Image
+                Width="150"
+                Height="150"
+                Margin="20,10,0,0"
+                VerticalAlignment="Center"
+                Cursor="Hand"
+                MouseDown="ImgLogo_Click"
+                Source="pack://application:,,,/Resources/Images/gesem-logo-sin-fondo.png" />
+
+            <!--  Menu  -->
+            <Menu
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Background="{DynamicResource TopBarMenuColor}">
+
+                <!--  Menu 3 barras  -->
+                <MenuItem
+                    Margin="0,0,10,0"
+                    Cursor="Hand"
+                    Style="{DynamicResource NormalTextStyle}">
+                    <MenuItem.Header>
+                        <!--  Imagen menú  -->
+                        <Image
+                            Width="45"
+                            Height="45"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="pack://application:,,,/Resources/Images/menu.png" />
+                    </MenuItem.Header>
+
+                    <!--  Opciones menú  -->
+                    <MenuItem
+                        Click="Home_Click"
+                        Header="{DynamicResource MenuItemHome}"
+                        Style="{StaticResource MenuItemStyle}" />
+                    <MenuItem
+                        Click="Help_Click"
+                        Header="{DynamicResource MenuItemFAQ}"
+                        Style="{DynamicResource MenuItemStyle}" />
+                    <MenuItem
+                        Click="AboutUs_Click"
+                        Header="{DynamicResource MenuItemAboutUs}"
+                        Style="{DynamicResource MenuItemStyle}" />
+                </MenuItem>
+
+
+                <!--  Menu usuario  -->
+                <MenuItem Margin="0,0,10,0" Cursor="Hand">
+                    <MenuItem.Header>
+                        <!--  Imagen menú  -->
+                        <Ellipse
+                            Width="45"
+                            Height="45"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Stroke="Black"
+                            StrokeThickness="0.5">
+                            <Ellipse.Fill>
+                                <ImageBrush
+                                    x:Name="MenuImage"
+                                    ImageSource="pack://application:,,,/Resources/Images/user-black.png"
+                                    Stretch="UniformToFill" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </MenuItem.Header>
+
+                    <!--  Submenú con opciones de usuario  -->
+                    <MenuItem Click="EditProfile_Click" Style="{DynamicResource MenuItemStyle}">
+                        <MenuItem.Header>
+                            <StackPanel Width="200">
+                                <TextBlock Margin="0,0,0,10" Text="{DynamicResource MenuItemProfile}" />
+                                <TextBlock x:Name="MenuProfileEmail" Style="{DynamicResource TextBlockStyle}" />
+                                <TextBlock x:Name="MenuProfileName" Style="{DynamicResource TextBlockStyle}" />
+                                <TextBlock x:Name="MenuProfileNumber" Style="{DynamicResource TextBlockStyle}" />
+                                <TextBlock x:Name="MenuProfileAddress" Style="{DynamicResource TextBlockStyle}" />
+
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+
+                    <!--  Otras opciones de menú  -->
+                    <MenuItem
+                        Click="Lenguage_Click"
+                        Header="{DynamicResource MenuItemLenguage}"
+                        Style="{DynamicResource MenuItemStyle}" />
+                    <MenuItem
+                        Click="Theme_Click"
+                        Header="{DynamicResource MenuItemTheme}"
+                        Style="{DynamicResource MenuItemStyle}" />
+                    <MenuItem
+                        Click="LogOut_Click"
+                        Header="{DynamicResource MenuItemLogOut}"
+                        Style="{DynamicResource MenuItemStyle}" />
+                </MenuItem>
+            </Menu>
+
+        </DockPanel>
+
+        <!--  Contenedor general  -->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+
+            <!--  Contenedor titulo  -->
+            <StackPanel
+                Margin="0,100,0,50"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top">
+                <Label
+                    Margin="0,20,0,0"
+                    HorizontalAlignment="Center"
+                    Content="{DynamicResource LeftMenuRequests}"
+                    Style="{DynamicResource TitleTextStyle}" />
+            </StackPanel>
+
+            <!--  Contenedor con scroll y tabla  -->
+            <Border
+                Width="1000"
+                Height="600"
+                Background="{DynamicResource ContainerLoginColor}"
+                CornerRadius="20">
+                <!--  Sombra  -->
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="20"
+                        Direction="320"
+                        Opacity="0.5"
+                        ShadowDepth="10"
+                        Color="{DynamicResource ShadowColor}" />
+                </Border.Effect>
+
+                <Grid Margin="40">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!--
+                        Filtro por estado
+                    -->
+                    <StackPanel
+                        Grid.Row="0"
+                        Margin="0,0,0,20"
+                        Orientation="Horizontal">
+                        <ComboBox
+                            x:Name="ComboFiltroEstado"
+                            Width="200"
+                            HorizontalAlignment="Left"
+                            SelectionChanged="ComboFiltroEstado_SelectionChanged"
+                            Style="{DynamicResource ComboBoxStyle}">
+                            <ComboBoxItem
+                                Content="{DynamicResource Todas}"
+                                IsSelected="True"
+                                Tag="todos" />
+                            <ComboBoxItem Content="{DynamicResource Pendientes}" Tag="pendiente" />
+                            <ComboBoxItem Content="{DynamicResource EnProceso}" Tag="en_proceso" />
+                            <ComboBoxItem Content="{DynamicResource Finalizadas}" Tag="finalizada" />
+                        </ComboBox>
+                    </StackPanel>
+
+                    <!--  Tabla de solicitudes  -->
+                    <DataGrid
+                        x:Name="TablaSolicitudes"
+                        Grid.Row="1"
+                        AutoGenerateColumns="False"
+                        IsReadOnly="True"
+                        Style="{DynamicResource MediumTextStyle}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding EmailUsuario}"
+                                Header="{DynamicResource EmailProfile}" />
+
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding TipoServicio}"
+                                Header="{DynamicResource TipoServicio}" />
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding Subtipo}"
+                                Header="{DynamicResource SubtipoServicio}" />
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding Estado}"
+                                Header="{DynamicResource Estado}" />
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding DescripcionCorta}"
+                                Header="{DynamicResource Descripcion}" />
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding FechaCreacion}"
+                                Header="{DynamicResource FechaCreacion}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Border>
+
+        </StackPanel>
+
+    </Grid>
+</Page>

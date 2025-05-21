@@ -1,0 +1,277 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--  App  -->
+    <sys:String x:Key="ConectionFailed">No se pudo conectar con la base de datos, comprueba tu conexion a internet e intentalo de nuevo.</sys:String>
+
+
+    <!--  MenuItem  -->
+    <sys:String x:Key="MenuItemFAQ">Preguntas frecuentes</sys:String>
+    <sys:String x:Key="MenuItemAboutUs">Sobre nosotros</sys:String>
+    <sys:String x:Key="MenuItemHome">Inicio</sys:String>
+    <sys:String x:Key="MenuItemLogOut">Cerrar sesion</sys:String>
+    <sys:String x:Key="MenuItemProfile">Perfil</sys:String>
+    <sys:String x:Key="MenuItemLenguage">Idioma</sys:String>
+    <sys:String x:Key="MenuItemTheme">Tema</sys:String>
+    <sys:String x:Key="MenuProfileName">Nombre:</sys:String>
+    <sys:String x:Key="MenuProfileEmail">E-Mail:</sys:String>
+    <sys:String x:Key="MenuProfileNumber">Telefono:</sys:String>
+    <sys:String x:Key="MenuProfileNif">NIF:</sys:String>
+    <sys:String x:Key="LogOutConfirmation">¿Seguro que deseas cerrar sesión?</sys:String>
+
+    <!--  DisplayAlerts  -->
+    <sys:String x:Key="DisplayAlertTheme">Tema</sys:String>
+    <sys:String x:Key="SelectTheme">Seleccione un tema</sys:String>
+    <sys:String x:Key="DarkTheme">Oscuro</sys:String>
+    <sys:String x:Key="LigthTheme">Claro</sys:String>
+
+    <sys:String x:Key="SelectLenguage">Seleccione un idioma</sys:String>
+    <sys:String x:Key="SpanishLenguage">Español</sys:String>
+    <sys:String x:Key="EnglishLenguage">Ingles</sys:String>
+
+    <!--  LoginView  -->
+    <sys:String x:Key="TitleLogIn">Inicio de sesion</sys:String>
+    <sys:String x:Key="User">Usuario</sys:String>
+    <sys:String x:Key="Password">Contraseña</sys:String>
+    <sys:String x:Key="ForgotPassword">¿Has olvidado tu contraseña?</sys:String>
+    <sys:String x:Key="RememberMe">Recordarme</sys:String>
+    <sys:String x:Key="BtnLogin">Iniciar Sesion</sys:String>
+
+    <sys:String x:Key="PlaceHolderUser">Introduce tu usuario (e-mail)</sys:String>
+    <sys:String x:Key="PlaceHolderPassword">Introduce tu contraseña</sys:String>
+
+    <sys:String x:Key="DisplayAlertObligatori">Es obligatorio rellenar todos los campos</sys:String>
+    <sys:String x:Key="DisplayAlertIncorrectUserOrPass">Usuario o contraseña incorrectos.</sys:String>
+    <sys:String x:Key="DisplayAlertAccountNotActive">Tu cuenta no está activa, contacta con un administrador para mas informacion.</sys:String>
+
+    <sys:String x:Key="SubjectLogin">Solicitud para restablecer contraseña</sys:String>
+    <sys:String x:Key="Body" xml:space="preserve">
+        Solicito restablecer mi contraseña.
+
+        A continuación dejo mis datos para su verificación:
+        - Nombre completo:
+        - Apellidos:
+        - NIF:
+        - Usuario:
+
+        Esta solicitud fue realizada el: {0}
+
+        [Este mensaje fue generado desde la aplicación de escritorio]
+    </sys:String>
+
+    <!--  AboutUsView  -->
+    <sys:String x:Key="TitleAboutUs">Sobre nosotros</sys:String>
+    <sys:String x:Key="IntroAboutUs">Introduccion</sys:String>
+    <sys:String x:Key="TextBlockAbouUs1">Gesem es una empresa especializada en la gestión de tramites empresariales, contamos con mas de 5 años de experiencia en el sector de la construcción. Con nuestra aplicación multiplataforma diseñada para optimizar la gestión administrativa en el sector de la construcción permitimos a los clientes trabajar de una manera mucho mas cómoda y mejorar sus negocios gracias a la libertad que les ofrece nuestro servicio.</sys:String>
+    <sys:String x:Key="ObjetivesAboutUs">Objetivos</sys:String>
+    <sys:String x:Key="TextBlockAbouUs2">• Garantizar un trato inmejorable y cercano con nuestros clientes.</sys:String>
+    <sys:String x:Key="TextBlockAbouUs3">• Facilidad de uso, con una interfaz intuitiva para usuarios sin experiencia en tecnología.</sys:String>
+    <sys:String x:Key="TextBlockAbouUs4">• Accesibilidad y adaptabilidad, con precios ajustados a las necesidades de nuestros clientes.</sys:String>
+    <sys:String x:Key="TextBlockAbouUs5">• Escalabilidad, permitiendo incorporar nuevas funcionalidades según se requieran.</sys:String>
+    <sys:String x:Key="TextBlockAbouUs6">• Seguridad y privacidad, garantizando la protección de los datos de nuestros clientes.</sys:String>
+
+    <sys:String x:Key="MailAboutUs">📧 Correo electrónico:</sys:String>
+    <sys:String x:Key="WebAboutUs">🌐 Sitio web:</sys:String>
+    <sys:String x:Key="TelAboutUs">📞 Teléfono: +34 666 666 666</sys:String>
+    <sys:String x:Key="AddressAboutUs">🏢 Dirección:</sys:String>
+
+    <sys:String x:Key="SubjectAboutUs">Solicitud de consulta/ayuda</sys:String>
+
+    <!--  FAQView  -->
+    <sys:String x:Key="TitleHelp">Preguntas frecuentes</sys:String>
+
+    <sys:String x:Key="Question1Help">¿Cómo puedo conseguir una cuenta?</sys:String>
+    <sys:String x:Key="Answer1Help">Para obtener tu cuenta, debes contactar con un administrador a través del correo electrónico "administracion@gesem.com". Él te asesorará y te guiará durante el proceso.</sys:String>
+
+    <sys:String x:Key="Question2Help">¿Cómo puedo restablecer mi contraseña?</sys:String>
+    <sys:String x:Key="Answer2Help">Para restablecer tu contraseña, accede a la sección "Olvidé mi contraseña" en la página de inicio de sesión y sigue las instrucciones.</sys:String>
+
+    <sys:String x:Key="Question3Help">¿Dónde puedo encontrar soporte técnico o ayuda?</sys:String>
+    <sys:String x:Key="Answer3Help">Puedes encontrar nuestro contacto en el menú "Sobre nosotros", o escribirnos directamente a "administracion@gesem.com" explicando tu problema.</sys:String>
+
+    <sys:String x:Key="Question4Help">¿Cómo puedo dar de baja mi cuenta?</sys:String>
+    <sys:String x:Key="Answer4Help">Para dar de baja tu cuenta, simplemente deja de realizar el pago mensual o contacta con nosotros a través del menú "Sobre nosotros" o mediante el correo "administracion@gesem.com".</sys:String>
+
+    <sys:String x:Key="Question5Help">¿Qué servicios ofrece la aplicación?</sys:String>
+    <sys:String x:Key="Answer5Help">Para conocer los servicios que ofrecemos, puedes visitar nuestra web: www.gesem.com, tambien la puedes encontrar en el menu "Sobre nosotros" en la zona de contacto</sys:String>
+
+    <!--  MainUserView  -->
+    <sys:String x:Key="TitleCard1">Servicios técnicos</sys:String>
+    <sys:String x:Key="ContentCard1">Asistencia especializada para la instalación, mantenimiento y reparación de equipos o sistemas tecnológicos.</sys:String>
+
+    <sys:String x:Key="TitleCard2">Asesoría administrativa</sys:String>
+    <sys:String x:Key="ContentCard2">Apoyo profesional en la gestión de trámites, documentación y organización de procesos dentro de una empresa o actividad profesional.</sys:String>
+
+    <sys:String x:Key="OptionCard1">Asistencia técnica, realización y/o interpretación de planos.</sys:String>
+    <sys:String x:Key="OptionCard2">Desarrollo de memorias para presupuestos de obra.</sys:String>
+    <sys:String x:Key="OptionCard3">Presupuestos con desglose de materiales y precios de proveedores.</sys:String>
+    <sys:String x:Key="OptionCard4">Realización de presupuestos de mayor calidad.</sys:String>
+    <sys:String x:Key="OptionCard5">Control de obra y mediciones.</sys:String>
+    <sys:String x:Key="OptionCard6">Preparación de la documentación técnica para licitaciones de obra pública.</sys:String>
+    <sys:String x:Key="OptionCard7">Planes de seguridad y salud.</sys:String>
+
+    <sys:String x:Key="OptionCard8">Elaboración de presupuestos, recepción de albaranes, facturación.</sys:String>
+    <sys:String x:Key="OptionCard9">Organización de la documentación de la empresa o proyecto.</sys:String>
+    <sys:String x:Key="OptionCard10">Apertura de centro de trabajo.</sys:String>
+    <sys:String x:Key="OptionCard11">Certificados técnicos.</sys:String>
+    <sys:String x:Key="OptionCard12">Preparación de la documentación y trámites para licitaciones de obra pública.</sys:String>
+    <sys:String x:Key="OptionCard13">Gestión de cobros y comprobación de suministro con la factura.</sys:String>
+    <sys:String x:Key="OptionCard14">Intermediación con el asesor fiscal.</sys:String>
+
+    <sys:String x:Key="CardButton">Continuar</sys:String>
+
+    <!--  ProfileView  -->
+
+    <sys:String x:Key="ChangeProfileImage">Cambiar foto de perfil</sys:String>
+    <sys:String x:Key="EmailProfile">Email:</sys:String>
+    <sys:String x:Key="NameProfile">Nombre:</sys:String>
+    <sys:String x:Key="LastNameProfile">Apellidos:</sys:String>
+    <sys:String x:Key="NIFProfile">NIF:</sys:String>
+    <sys:String x:Key="PhoneProfile">Teléfono:</sys:String>
+    <sys:String x:Key="AddressProfile">Direccion:</sys:String>
+    <sys:String x:Key="ClientRolProfile">Tipo de cuenta:</sys:String>
+    <sys:String x:Key="ClientTypeProfile">Tipo de cliente:</sys:String>
+    <sys:String x:Key="CompanyName">Nombre de la empresa:</sys:String>
+    <sys:String x:Key="CompanyDescription">Descripcion de la empresa:</sys:String>
+    <sys:String x:Key="ActualPassword">Contraseña actual:</sys:String>
+    <sys:String x:Key="NewPassword">Nueva contraseña:</sys:String>
+    <sys:String x:Key="RepeatNewPassword">Repite la contraseña nueva:</sys:String>
+
+    <sys:String x:Key="ChangePassowrdProfile">Cambiar contraseña</sys:String>
+    <sys:String x:Key="DisplayAlertImageChange">Foto de perfil actualizada correctamente.</sys:String>
+    <sys:String x:Key="DisplayAlertImageChangeError">No se pudo actualizar la imagen, intentelo de nuevo mas tarde.</sys:String>
+    <sys:String x:Key="DisplayAlertChangesOk">Cambios guardados correctamente.</sys:String>
+    <sys:String x:Key="DisplayAlertDiscardChanges">Cambios descartados correctamente.</sys:String>
+
+
+
+    <!--  Barra lateral izquierda  -->
+    <sys:String x:Key="LeftMenuRequests">Solicitudes</sys:String>
+    <sys:String x:Key="LeftMenuWatchAll">Ver todas</sys:String>
+    <sys:String x:Key="LeftMenuPendings">Pendientes</sys:String>
+    <sys:String x:Key="LeftMenuInProcess">En proceso</sys:String>
+    <sys:String x:Key="LeftMenuFinished">Finalizadas</sys:String>
+    <sys:String x:Key="LeftMenuLastConnection">Ultima conexion:</sys:String>
+
+    <sys:String x:Key="LeftMenuManageUsers">Usuarios</sys:String>
+
+    <!--  Asistencia tecnica  -->
+    <sys:String x:Key="TitleTechnicalAssistance">Asistencia tecnica</sys:String>
+    <sys:String x:Key="TypeAssistance">Tipo de asistencia</sys:String>
+    <sys:String x:Key="AssistanceOption1">Interpretacion de planos</sys:String>
+    <sys:String x:Key="AssistanceOption2">Realizacion de planos</sys:String>
+    <sys:String x:Key="AssistanceOption3">Modificacion de planos</sys:String>
+    <sys:String x:Key="AssistanceDescription">Descripcion</sys:String>
+    <sys:String x:Key="AssistanceNeedVisit">¿Requiere visita técnica?</sys:String>
+    <sys:String x:Key="AssistanceYes">Si</sys:String>
+    <sys:String x:Key="AssistanceNo">No</sys:String>
+    <sys:String x:Key="AssistanceLimitDate">Fecha limite de entrega</sys:String>
+    <sys:String x:Key="AssistanceUbi">Ubicacion de la obra</sys:String>
+    <sys:String x:Key="SendButton">Enviar solicitud</sys:String>
+
+    <!--  Asistencia tecnica  -->
+    <sys:String x:Key="TitleBudgetsReports">Memorias de presupuesto de obras</sys:String>
+    <sys:String x:Key="ArchivosEnviados">Archivos enviados</sys:String>
+    <sys:String x:Key="ComentariosAdmin">Comentarios</sys:String>
+    <sys:String x:Key="ArchivosAdjuntos">Archivos adjuntos</sys:String>
+    <sys:String x:Key="Delete">Eliminar</sys:String>
+
+
+    <!--  Gestionar usuarios  -->
+    <sys:String x:Key="ManageUsersTitle">Gestionar usuarios</sys:String>
+    <sys:String x:Key="ComboBoxAll">Todos</sys:String>
+    <sys:String x:Key="ComboBoxUsers">Usuarios</sys:String>
+    <sys:String x:Key="ComboBoxAdmins">Administradores</sys:String>
+    <sys:String x:Key="FormatoCorreo">El correo introducido no es válido.</sys:String>
+
+    <!--  Modificar usuarios y agregar usuarios  -->
+    <sys:String x:Key="DisplayAlertActualPassword">La contraseña actual no es correcta.</sys:String>
+    <sys:String x:Key="DisplayAlertNewPasswords">Las nuevas contraseñas no coinciden.</sys:String>
+
+    <sys:String x:Key="UpdatePassword">Actualizar contraseña</sys:String>
+    <sys:String x:Key="CreateUser">Crear usuario</sys:String>
+
+    <sys:String x:Key="ClientStateProfile">Estado de la cuenta</sys:String>
+    <sys:String x:Key="ClientStateActive">Activa</sys:String>
+    <sys:String x:Key="ClientStateInactive">Suspendida</sys:String>
+
+    <sys:String x:Key="ClientTypeAuto">Autonomo</sys:String>
+    <sys:String x:Key="ClientTypeCompany">PYME</sys:String>
+    <sys:String x:Key="DeleteAccount">Eliminar cuenta</sys:String>
+    <sys:String x:Key="DisplayAlertDeleteAccountConfirm">¿Estas seguro de que quieres eliminar esta cuenta?</sys:String>
+    <sys:String x:Key="DisplayAlertDeleteTitle">Eliminar cuenta de usuario</sys:String>
+    <sys:String x:Key="DisplayAlertAccountDeleted">La cuenta ha sido eliminada correctamente</sys:String>
+
+    <sys:String x:Key="Admin">Administrador</sys:String>
+
+    <sys:String x:Key="MessageBoxRepeatPassword">Debes rellenar todos los campos y repetir correctamente la contraseña.</sys:String>
+    <sys:String x:Key="MessageBoxUserDuplicated">Ya existe un usuario con ese email.</sys:String>
+    <sys:String x:Key="MessageBoxUserCreatedOk">Usuario creado correctamente.</sys:String>
+    <sys:String x:Key="Trabajador">Trabajador</sys:String>
+
+    <!--  Solicitudes  -->
+    <sys:String x:Key="DeleteRequestAdvert">¿Estás seguro de que quieres eliminar esta solicitud? Esta acción no se puede deshacer.</sys:String>
+    <sys:String x:Key="ConfirmElimination">Confirmar eliminación</sys:String>
+    <sys:String x:Key="EliminationOk">Solicitud eliminada correctamente.</sys:String>
+    <sys:String x:Key="BigDocument">El archivo supera el tamaño máximo permitido de 10 MB.</sys:String>
+    <sys:String x:Key="SelectDocument">Seleccionar archivo adjunto</sys:String>
+    <sys:String x:Key="FilterDocuments">Todos los archivos</sys:String>
+
+    <!--  Gestionar solicitudes  -->
+    <sys:String x:Key="TipoServicio">Tipo de servicio</sys:String>
+    <sys:String x:Key="SubtipoServicio">Subtipo</sys:String>
+    <sys:String x:Key="Estado">Estado</sys:String>
+    <sys:String x:Key="Descripcion">Descripcion</sys:String>
+    <sys:String x:Key="FechaCreacion">Fecha de creacion</sys:String>
+    <sys:String x:Key="Todas">Todas</sys:String>
+    <sys:String x:Key="Pendientes">Pendientes</sys:String>
+    <sys:String x:Key="EnProceso">En proceso</sys:String>
+    <sys:String x:Key="Finalizadas">Finalizadas</sys:String>
+
+    <!--  Intermediario con el asedor financiero  -->
+    <sys:String x:Key="NombreAsesorFinanciero">Nombre del asesor financiero</sys:String>
+    <sys:String x:Key="CorreoAsesorFinanciero">Correo del asesor financiero</sys:String>
+    <sys:String x:Key="TelefonoAsesorFinanciero">Telefono movil o fijo del asesor financiero</sys:String>
+    <sys:String x:Key="ElegirTipoDePeriodo">Tipo de periodo fiscal</sys:String>
+    <sys:String x:Key="Trimestral">Trimestral</sys:String>
+    <sys:String x:Key="Anual">Anual</sys:String>
+    <sys:String x:Key="Trimestre1">1º Trimestre (Ene-Mar)</sys:String>
+    <sys:String x:Key="Trimestre2">2º Trimestre (Abr-Jun)</sys:String>
+    <sys:String x:Key="Trimestre3">3º Trimestre (Jul-Sep)</sys:String>
+    <sys:String x:Key="Trimestre4">4º Trimestre (Oct-Dic)</sys:String>
+    <sys:String x:Key="TituloIntermediario">Intermediario con el asesor financiero</sys:String>
+
+    <sys:String x:Key="FechaRespuesta">Respondido el:</sys:String>
+
+    <!--  Nombre de las paginas, accesibilidad  -->
+    <sys:String x:Key="AboutUsViewAdmin">Pagina sobre nosotros de la vista administrador</sys:String>
+    <sys:String x:Key="AddUserView">Pagina para añadir usuarios de la vista administrador</sys:String>
+    <sys:String x:Key="AdminMainView">Pagina principal de los administradores, donde ven las solicitudes que hay en el sistema</sys:String>
+    <sys:String x:Key="FAQViewAdmin">Pagina de preguntas frecuentes de la vista administrador</sys:String>
+    <sys:String x:Key="ManageUser">Pagina de gestion de usuarios de la vista administrador</sys:String>
+    <sys:String x:Key="ModifyUserView">Pagina de modificacion de cuentas de usuario de la vista adminsitrador</sys:String>
+    <sys:String x:Key="ProfileView">Pagina que muestra el perfil del usuario logeado</sys:String>
+    <sys:String x:Key="DisplayAlertLenguage">Ventana emergente para cambiar el idioma</sys:String>
+    <sys:String x:Key="DisplayAlertTheme2">Ventana emergente para cambiar el tema</sys:String>
+    <sys:String x:Key="AboutUsViewSuperAdmin">Pagina sobre nosotros de la vista superadministrador</sys:String>
+    <sys:String x:Key="AddUserViewSuper">Pagina para añadir usuarios de la vista superadministrador</sys:String>
+    <sys:String x:Key="FAQViewSuperAdmin">Pagina de preguntas frecuentes de la vista superadministrador</sys:String>
+    <sys:String x:Key="ManageUserAdmin">Pagina de gestion de usuarios de la vista superadministrador</sys:String>
+    <sys:String x:Key="ModifyUserAdminView">Pagina de modificacion de cuentas de usuario de la vista superadminsitrador</sys:String>
+    <sys:String x:Key="SuperAdminMainView">Pagina principal de los superadministradores, donde ven las solicitudes que hay en el sistema</sys:String>
+    <sys:String x:Key="AboutUs">Pagina sobre nosotros de la vista no registrado</sys:String>
+    <sys:String x:Key="FAQ">Pagina de preguntas frecuentes de la vista no registrado</sys:String>
+    <sys:String x:Key="LogInView">Pagina de inicio de sesion</sys:String>
+    <sys:String x:Key="IntermediacionAsesor">Pagina de intermediacion con el asesor fiscal</sys:String>
+    <sys:String x:Key="AsistenciaTecnica">Pagina de asistencias tecnicas</sys:String>
+    <sys:String x:Key="AboutUsUser">Pagina sobre nosotros de la vista usuario</sys:String>
+    <sys:String x:Key="FAQViewUser">Pagina de preguntas frecuentes de la vista usuario</sys:String>
+    <sys:String x:Key="UserMainView">Pagina principal de los usuarios, donde pueden tramitar nuevas soluciones</sys:String>
+    <sys:String x:Key="UserManageRequests">Pagina donde se gestionan las solicitudes de la vista usuario</sys:String>
+
+    <!--      <sys:String x:Key=""></sys:String> -->
+    <!--  (string)Application.Current.FindResource("")  -->
+
+</ResourceDictionary>

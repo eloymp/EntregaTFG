@@ -1,0 +1,202 @@
+﻿<Page
+    x:Class="ProyectoFinalEMP.Views.Unregistered.LoginView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ProyectoFinalEMP.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="Auto"
+    Height="Auto"
+    AutomationProperties.Name="{DynamicResource LogInView}"
+    KeyDown="Page_KeyDown"
+    mc:Ignorable="d">
+
+    <Grid Background="{DynamicResource BackgroundColor}">
+
+        <!--  Barra superior  -->
+        <DockPanel
+            Height="65"
+            VerticalAlignment="Top"
+            Background="{DynamicResource TopBarMenuColor}">
+            <!--  Imagen con el logo  -->
+            <Image
+                Width="150"
+                Height="150"
+                Margin="20,10,0,0"
+                VerticalAlignment="Center"
+                Cursor="Hand"
+                MouseDown="ImgLogo_Click"
+                Source="pack://application:,,,/Resources/Images/gesem-logo-sin-fondo.png" />
+
+            <!--  Menu  -->
+            <Menu
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Background="{DynamicResource BarMenuColor}">
+                <MenuItem
+                    Margin="0,0,10,0"
+                    Cursor="Hand"
+                    Style="{DynamicResource NormalTextStyle}">
+                    <MenuItem.Header>
+                        <!--  Imagen menu  -->
+                        <Image
+                            Width="45"
+                            Height="45"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="pack://application:,,,/Resources/Images/menu.png" />
+                    </MenuItem.Header>
+
+                    <!--  Opciones menu  -->
+                    <MenuItem
+                        Click="Home_Click"
+                        Header="{DynamicResource MenuItemHome}"
+                        Style="{StaticResource MenuItemStyle}" />
+                    <MenuItem
+                        Click="Help_Click"
+                        Header="{DynamicResource MenuItemFAQ}"
+                        Style="{StaticResource MenuItemStyle}" />
+                    <MenuItem
+                        Click="AboutUs_Click"
+                        Header="{DynamicResource MenuItemAboutUs}"
+                        Style="{StaticResource MenuItemStyle}" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+
+        <!--  Contenedor general  -->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+
+            <!--  Contenedor imagen y titulo  -->
+            <StackPanel
+                Margin="0,120,0,40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top">
+
+                <!--  Imagen con borde circular negro  -->
+                <Border
+                    Width="210"
+                    Height="210"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    BorderBrush="Black"
+                    BorderThickness="3"
+                    ClipToBounds="True"
+                    CornerRadius="100">
+
+                    <Image
+                        x:Name="imgUsuario"
+                        Width="200"
+                        Height="200"
+                        Source="pack://application:,,,/Resources/Images/user-white.png"
+                        Stretch="Fill" />
+                </Border>
+
+                <!--  Título  -->
+                <Label
+                    Margin="0,30,0,0"
+                    HorizontalAlignment="Center"
+                    Content="{DynamicResource TitleLogIn}"
+                    Style="{DynamicResource TitleTextStyle}" />
+            </StackPanel>
+
+
+            <!--  Contenedor login  -->
+            <Border
+                Width="500"
+                Height="400"
+                Background="{DynamicResource ContainerLoginColor}"
+                CornerRadius="39">
+                <!--  Sombra  -->
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="20"
+                        Direction="320"
+                        Opacity="0.5"
+                        ShadowDepth="10"
+                        Color="{DynamicResource ShadowColor}" />
+                </Border.Effect>
+
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <!--  Usuario  -->
+                    <Label
+                        Margin="0,40,0,0"
+                        Content="{DynamicResource User}"
+                        Style="{DynamicResource NormalTextStyle}" />
+                    <Grid>
+                        <TextBox
+                            Name="txtUsuario"
+                            Width="250"
+                            Height="30"
+                            HorizontalAlignment="Left"
+                            VerticalContentAlignment="Center"
+                            Style="{DynamicResource NormalTextStyle}"
+                            TextChanged="txtUsuario_TextChanged" />
+                        <!--  PlaceHolder  -->
+                        <TextBlock
+                            Name="placeholderUsuario"
+                            Margin="5"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            IsHitTestVisible="False"
+                            Style="{DynamicResource PlaceHolderStyle}"
+                            Text="{DynamicResource PlaceHolderUser}" />
+                    </Grid>
+
+                    <!--  Contraseña  -->
+                    <Label
+                        Margin="0,20,0,0"
+                        Content="{DynamicResource Password}"
+                        Style="{DynamicResource NormalTextStyle}" />
+                    <Grid>
+                        <PasswordBox
+                            Name="txtContraseña"
+                            Width="250"
+                            Height="30"
+                            VerticalContentAlignment="Center"
+                            PasswordChanged="txtContraseña_TextChanged" />
+
+                        <!--  PlaceHolder  -->
+                        <TextBlock
+                            Name="placeholderPassword"
+                            Margin="5"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            IsHitTestVisible="False"
+                            Style="{DynamicResource PlaceHolderStyle}"
+                            Text="{DynamicResource PlaceHolderPassword}" />
+                    </Grid>
+
+                    <!--  Botón Recordarme  -->
+                    <CheckBox
+                        x:Name="checkBoxRecordarme"
+                        Margin="0,20,0,0"
+                        VerticalContentAlignment="Center"
+                        Content="{DynamicResource RememberMe}"
+                        IsChecked="True"
+                        Style="{DynamicResource CheckBoxStyle}" />
+
+                    <!--  Botón de login  -->
+                    <Button
+                        x:Name="LoginButton"
+                        Width="150"
+                        Height="40"
+                        Margin="0,30,0,30"
+                        BorderBrush="Transparent"
+                        Click="LoginButton_Click"
+                        Content="{DynamicResource BtnLogin}"
+                        Style="{DynamicResource ButtonStyle}" />
+
+                    <!--  Hypervinculo para "¿Has olvidado tu contraseña?"  -->
+                    <TextBlock
+                        Margin="0,0,0,40"
+                        HorizontalAlignment="Center"
+                        MouseLeftButtonUp="HyperLinkPassword_Click"
+                        Style="{StaticResource HyperlinkStyle}"
+                        Text="{DynamicResource ForgotPassword}" />
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,52 @@
+﻿<Window
+    x:Class="ProyectoFinalEMP.Views.DisplayAlerts.DisplayAlertTheme"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ProyectoFinalEMP.Views.DisplayAlerts"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{DynamicResource DisplayAlertTheme2}"
+    AllowsTransparency="True"
+    AutomationProperties.Name="{DynamicResource DisplayAlertTheme}"
+    Background="Transparent"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterOwner"
+    WindowStyle="None"
+    mc:Ignorable="d">
+
+    <Border
+        Width="350"
+        Height="250"
+        Background="{DynamicResource ContainerDisplayAlert}"
+        CornerRadius="39"
+        Style="{StaticResource ShadowedBorderStyle}">
+
+        <ScrollViewer Padding="10" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20" VerticalAlignment="Center">
+                <TextBlock
+                    Margin="0,0,0,40"
+                    HorizontalAlignment="Center"
+                    FontSize="25"
+                    Style="{DynamicResource MediumBoldTextStyle}"
+                    Text="{DynamicResource SelectTheme}" />
+
+                <Button
+                    Width="150"
+                    Height="40"
+                    Margin="0,0,0,10"
+                    Click="BtnClaro_Click"
+                    Content="{DynamicResource LigthTheme}"
+                    Style="{DynamicResource ButtonStyle}" />
+
+                <Button
+                    Width="150"
+                    Height="40"
+                    Click="BtnOscuro_Click"
+                    Content="{DynamicResource DarkTheme}"
+                    Style="{DynamicResource ButtonStyle}" />
+
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+
+</Window>

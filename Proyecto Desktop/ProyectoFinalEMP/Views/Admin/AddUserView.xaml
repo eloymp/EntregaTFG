@@ -1,0 +1,182 @@
+﻿<Window
+    x:Class="ProyectoFinalEMP.Views.Admin.AddUserView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ProyectoFinalEMP.Views.User"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{DynamicResource MenuItemProfile}"
+    Width="500"
+    Height="700"
+    MinWidth="300"
+    MinHeight="500"
+    AutomationProperties.Name="{DynamicResource AddUserView}"
+    Icon="pack://application:,,,/Resources/Images/user-black.png"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+
+    <Grid Background="{DynamicResource BarMenuColor}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+            <StackPanel Width="400" HorizontalAlignment="Center">
+
+                <!--  Foto redonda  -->
+                <Ellipse
+                    Width="200"
+                    Height="200"
+                    Margin="0,50,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Stroke="Black"
+                    StrokeThickness="1">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="imgFotoPerfil" Stretch="UniformToFill" />
+                    </Ellipse.Fill>
+                </Ellipse>
+
+                <TextBlock
+                    Margin="0,20,0,30"
+                    HorizontalAlignment="Center"
+                    MouseLeftButtonUp="ChangeProfileImage"
+                    Style="{DynamicResource HyperlinkStyle}"
+                    Text="{DynamicResource ChangeProfileImage}" />
+
+
+                <!--  Campos  -->
+                <StackPanel Margin="0,10,0,0">
+
+
+
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource EmailProfile}" />
+                    <TextBox x:Name="EntryEmail" Style="{DynamicResource EntryStyleWhite}" />
+
+
+                    <!--  Nombre  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource NameProfile}" />
+                    <TextBox
+                        x:Name="EntryName"
+                        PreviewTextInput="SoloLetras_PreviewTextInput"
+                        Style="{DynamicResource EntryStyleWhite}" />
+
+                    <!--  Apellidos  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource LastNameProfile}" />
+                    <TextBox
+                        x:Name="EntryLastName"
+                        PreviewTextInput="SoloLetras_PreviewTextInput"
+                        Style="{DynamicResource EntryStyleWhite}" />
+
+                    <!--  NIF  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource NIFProfile}" />
+                    <TextBox x:Name="EntryNIF" Style="{DynamicResource EntryStyleWhite}" />
+
+                    <!--  Teléfono  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource PhoneProfile}" />
+                    <TextBox
+                        x:Name="EntryPhone"
+                        PreviewTextInput="EntryPhone_PreviewTextInput"
+                        Style="{DynamicResource EntryStyleWhite}" />
+
+                    <!--  Dirección  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource AddressProfile}" />
+                    <TextBox x:Name="EntryAddress" Style="{DynamicResource EntryStyleWhite}" />
+
+                    <!--  Rol  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource ClientRolProfile}" />
+                    <TextBox
+                        x:Name="EntryRol"
+                        IsReadOnly="True"
+                        Style="{DynamicResource EntryStyle}"
+                        Text="usuario" />
+
+                    <!--  Tipo de cliente  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource ClientTypeProfile}" />
+                    <ComboBox
+                        x:Name="LstTipoCliente"
+                        Width="220"
+                        Cursor="Hand"
+                        Style="{DynamicResource ComboBoxStyle}">
+                        <ComboBoxItem Content="Autónomo" />
+                        <ComboBoxItem Content="PYME" />
+                    </ComboBox>
+
+
+                    <!--  Nombre de la empresa  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource CompanyName}" />
+                    <TextBox x:Name="EntryCompanyName" Style="{DynamicResource EntryStyleWhite}" />
+
+                    <!--  Descripcion de la empresa  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource CompanyDescription}" />
+                    <TextBox
+                        x:Name="EntryCompanyDescription"
+                        Width="220"
+                        Height="100"
+                        AcceptsReturn="True"
+                        Style="{DynamicResource EntryStyleWhite}"
+                        TextWrapping="Wrap" />
+
+                    <!--  Nueva contraseña  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource NewPassword}" />
+                    <PasswordBox
+                        x:Name="NewPassword"
+                        Width="220"
+                        Height="25"
+                        VerticalContentAlignment="Center" />
+
+                    <!--  Repetir nueva contraseña  -->
+                    <TextBlock
+                        Margin="90,10,0,5"
+                        Style="{DynamicResource NormalTextStyle}"
+                        Text="{DynamicResource RepeatNewPassword}" />
+                    <PasswordBox
+                        x:Name="RepeatNewPassword"
+                        Width="220"
+                        Height="25"
+                        VerticalContentAlignment="Center" />
+
+                    <!--  Botón crear usuario  -->
+                    <Button
+                        Width="200"
+                        Height="40"
+                        Margin="0,30,0,60"
+                        Click="CrearUsuario_Click"
+                        Content="{DynamicResource CreateUser}"
+                        Style="{DynamicResource ButtonStyle}" />
+
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
