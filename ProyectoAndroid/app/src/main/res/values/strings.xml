@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Gesem</string>
+    <string name="Login">Inicio de sesion</string>
+    <string name="Usuario">Usuario</string>
+    <string name="UsuarioPlaceHolder">Introduce tu usuario (e-mail)</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="ContraseñaPlaceHolder">Introduce tu contraseña</string>
+    <string name="Recordarme">Recordarme</string>
+    <string name="IniciarSesionBoton">Iniciar sesion</string>
+    <string name="sobre_nosotros">Sobre nosotros</string>
+    <string name="has_olvidado_tu_contrase_a">¿Has olvidado tu contraseña?</string>
+    <string name="objetivos">▾ Objetivos</string>
+    <string name="TitleAboutUs">Sobre nosotros</string>
+    <string name="IntroAboutUs">Introducción</string>
+    <string name="TextBlockAboutUs1">Gesem es una empresa especializada en la gestión de trámites empresariales, contamos con más de 5 años de experiencia en el sector de la construcción. Con nuestra aplicación multiplataforma diseñada para optimizar la gestión administrativa en el sector de la construcción permitimos a los clientes trabajar de una manera mucho más cómoda y mejorar sus negocios gracias a la libertad que les ofrece nuestro servicio.</string>
+    <string name="ObjetivesAboutUs">Objetivos</string>
+    <string name="TextBlockAboutUs2">• Garantizar un trato inmejorable y cercano con nuestros clientes.</string>
+    <string name="TextBlockAboutUs3">• Facilidad de uso, con una interfaz intuitiva para usuarios sin experiencia en tecnología.</string>
+    <string name="TextBlockAboutUs4">• Accesibilidad y adaptabilidad, con precios ajustados a las necesidades de nuestros clientes.</string>
+    <string name="TextBlockAboutUs5">• Escalabilidad, permitiendo incorporar nuevas funcionalidades según se requieran.</string>
+    <string name="TextBlockAboutUs6">• Seguridad y privacidad, garantizando la protección de los datos de nuestros clientes.</string>
+
+    <string name="MailAboutUs">📧 Correo electrónico: administracion@gesem.com</string>
+    <string name="WebAboutUs">🌐 Sitio web: www.gesem.es</string>
+    <string name="TelAboutUs">📞 Teléfono: +34 666 666 666</string>
+    <string name="AddressAboutUs">🏢 Dirección: C/ Hermanos Becerril, 3, 16004, Cuenca</string>
+    <string name="www_gesem_es">🌐 www.gesem.es</string>
+    <string name="administracion_gesem_com">📧 administracion@gesem.com</string>
+    <string name="_34_666_666_666">📞 +34 666 666 666</string>
+    <string name="c_hermanos_becerril_3_16004_cuenca">🏢 C/ Hermanos Becerril, 3, 16004, Cuenca</string>
+    <string name="TitleHelp">Preguntas frecuentes</string>
+
+    <string name="Question1Help">¿Cómo puedo conseguir una cuenta?</string>
+    <string name="Answer1Help">Para obtener tu cuenta, debes contactar con un administrador a través del correo electrónico "administracion@gesem.com". Él te asesorará y te guiará durante el proceso.</string>
+
+    <string name="Question2Help">¿Cómo puedo restablecer mi contraseña?</string>
+    <string name="Answer2Help">Para restablecer tu contraseña, accede a la sección "Olvidé mi contraseña" en la página de inicio de sesión y sigue las instrucciones.</string>
+
+    <string name="Question3Help">¿Dónde puedo encontrar soporte técnico o ayuda?</string>
+    <string name="Answer3Help">Puedes encontrar nuestro contacto en el menú "Sobre nosotros", o escribirnos directamente a "administracion@gesem.com" explicando tu problema.</string>
+
+    <string name="Question4Help">¿Cómo puedo dar de baja mi cuenta?</string>
+    <string name="Answer4Help">Para dar de baja tu cuenta, simplemente deja de realizar el pago mensual o contacta con nosotros a través del menú "Sobre nosotros" o mediante el correo "administracion@gesem.com".</string>
+
+    <string name="Question5Help">¿Qué servicios ofrece la aplicación?</string>
+    <string name="Answer5Help">Para conocer los servicios que ofrecemos, puedes visitar nuestra web: www.gesem.com, también la puedes encontrar en el menú "Sobre nosotros" en la zona de contacto.</string>
+    <string name="preguntas_frecuentes">Preguntas frecuentes</string>
+    <string name="c_mo_puedo_restablecer_mi_contrase_a">▾ ¿Cómo puedo restablecer mi contraseña?</string>
+    <string name="d_nde_puedo_encontrar_soporte_t_cnico_o_ayuda">▾ ¿Dónde puedo encontrar soporte técnico o ayuda?</string>
+    <string name="c_mo_puedo_dar_de_baja_mi_cuenta">▾ ¿Cómo puedo dar de baja mi cuenta?</string>
+    <string name="qu_servicios_ofrece_la_aplicaci_n">▾ ¿Qué servicios ofrece la aplicación?</string>
+    <string name="c_mo_puedo_conseguir_una_cuenta">▾ ¿Cómo puedo conseguir una cuenta?</string>
+
+
+</resources>

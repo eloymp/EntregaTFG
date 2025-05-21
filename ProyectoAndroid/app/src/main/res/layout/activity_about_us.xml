@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffd9d9d9"
+    tools:context=".AboutUsActivity">
+
+    <!-- Imagen logo -->
+
+
+    <!-- Título -->
+    <ImageView
+        android:id="@+id/logoView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="-10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gesemlogosinfondo" />
+
+    <TextView
+        android:id="@+id/tituloAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:text="@string/sobre_nosotros"
+        android:textColor="#ff104d80"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Introducción -->
+    <TextView
+        android:id="@+id/titleIntro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:padding="8dp"
+        android:text="▾ Introducción"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloAbout" />
+
+    <TextView
+        android:id="@+id/contentIntro"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#333333"
+        app:layout_constraintBottom_toTopOf="@+id/titleObj"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleIntro"
+        app:layout_constraintVertical_bias="0.129" />
+
+    <!-- Objetivos -->
+    <TextView
+        android:id="@+id/titleObj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:padding="8dp"
+        android:text="▾ Objetivos"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleIntro" />
+
+    <TextView
+        android:id="@+id/contentObj"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#333333"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleObj"
+        app:layout_constraintVertical_bias="0.182" />
+    <!--Contacto-->
+
+
+    <LinearLayout
+        android:id="@+id/layoutContacto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Correo -->
+        <TextView
+            android:id="@+id/linkCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:autoLink="email"
+            android:text="@string/administracion_gesem_com"
+            android:textColorLink="#000000"
+            android:textSize="14sp" />
+
+        <!-- Web -->
+        <TextView
+            android:id="@+id/linkWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:autoLink="web"
+            android:text="@string/www_gesem_es"
+            android:textColorLink="#000000"
+            android:textSize="14sp" />
+
+        <!-- Teléfono -->
+        <TextView
+            android:id="@+id/linkTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:autoLink="phone"
+            android:text="@string/_34_666_666_666"
+            android:textColorLink="#000000"
+            android:textSize="14sp" />
+
+        <!-- Dirección -->
+        <TextView
+            android:id="@+id/linkDireccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c_hermanos_becerril_3_16004_cuenca"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Menu -->
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/home" />
+
+        <ImageButton
+            android:id="@+id/btnAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/aboutus" />
+
+        <ImageButton
+            android:id="@+id/btnFaq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/faq" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

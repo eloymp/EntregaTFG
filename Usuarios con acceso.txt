@@ -1,0 +1,17 @@
+SUPERADMINISTRADOR
+superadmin@gmail.com
+1234
+
+ADMINISTRADOR
+admin@gmail.com
+1234
+
+USUARIO
+luis@gmail.com
+1234
+
+USUARIO (Varias solicitudes para poder mostrarlas en scroll en la app movil)
+pepe@gmail.com
+1234
+
+En la aplicación de Android solo tienen acceso los usuarios
