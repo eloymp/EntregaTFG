@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                 text = title
                 setTypeface(null, android.graphics.Typeface.BOLD)
                 setPadding(8, 24, 8, 8)
-                setTextColor(android.graphics.Color.BLACK)  // ← aquí forzamos negro
+                setTextColor(android.graphics.Color.BLACK)
             }
             row.addView(tv)
             table.addView(row)
@@ -53,10 +53,14 @@ class MainActivity : AppCompatActivity() {
                 text = key
                 setTypeface(null, android.graphics.Typeface.BOLD)
                 setPadding(8, 8, 8, 8)
+                setTextColor(android.graphics.Color.parseColor("#333333"))
+
             }
             val tvValue = TextView(this).apply {
                 text = value ?: "-"
                 setPadding(8, 8, 8, 8)
+                setTextColor(android.graphics.Color.parseColor("#333333"))
+
             }
             row.addView(tvKey)
             row.addView(tvValue)
